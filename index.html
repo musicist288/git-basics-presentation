@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Git Basic</title>
+
+		<meta name="description" content="Git Theory and Basics">
+		<meta name="author" content="Joseph Rossi">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/solarized.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <style>
+            .reveal .slides .left-align {
+                text-align: left;
+            }
+
+            .reveal p {
+                margin: 1em 0; 
+            }
+
+            .reveal section > ul {
+                margin-bottom: 1em;
+            }
+        </style>
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section data-markdown>
+                <script type="text/template">
+                    # Useful Git
+                </script>
+				</section>
+
+				<section data-markdown class="left-align">
+                <script type="text/template">
+                    ### Types of Version Control Systems
+                     
+                    * Atomic - One user per file at a time
+                    * Centralized Revision Control
+                        * SVN, TFS, Perforce
+                        * Was the most popular type of revision control prior the DVCS
+                    * Distributed (DVCS)
+                        * Git, Mercurial, Bazaar, etc.
+                </script>
+				</section>
+
+				<section data-markdown class="left-align">
+                <script type="text/template">
+                    ## A brief history of Git
+
+                    Developed by Linus Torvold while working on the Linux kernel.
+                    
+                    Intended to be an open source replacement for BitKeeper to keep the
+                    free-software evangelists happy.
+
+                    Originally release around 2005.
+                </script>
+				</section>
+
+				<section data-markdown class="left-align">
+                <script type="text/template">
+                    ### Benefits
+
+                    * Each contributor gets thier own private workspace
+                    * Offline workflows
+                    * Flexible - leaves the workflow up to the user or group
+                    
+                    ### Drawbacks
+
+                    * Has weak administrative support (hooks are about as much as you get)
+                    * Poor support for binary files
+                    * Not good for large repositories (e.g. Large Games)
+                    * Flexible - requires teams to agree and follow a workflow without guards in place
+                </script>
+				</section>
+
+				<section data-markdown class="left-align">
+                <script type="text/template">
+                    ## [Termonology](https://www.kernel.org/pub/software/scm/git/docs/gitglossary.html)
+
+                    * **heads** - a names reference to a commit (aka branch names)
+                    * **working tree** - the curret set of checked out files
+                    * **HEAD** - the current head of the working tree
+                    * **remote** - an upstream git server used for centralizing changes (usually a bare repisitory)
+                    * **object** - a unit of storage in git
+                    * **hash** (sometimes called 'object name') - the SHA1 identifier for an object
+                    * **index** (or 'staging area') - an "on deck" spot for changes to be committed
+                </script>
+				</section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: false,
+
+				transition: 'fade', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
